@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine|Lobster|Dancing+Script|Shadows+Into+Light|Amatic+SC|Abril+Fatface|Permanent+Marker|Righteous|Cinzel|Courgette|Caveat|Josefin+Slab|Monoton|Audiowide|Homemade+Apple|Nothing+You+Could+Do|Mr+Dafoe|Libre+Barcode+39+Extended|Fredericka+the+Great|Black+Ops+One|Ubuntu+Mono|Chewy|Michroma|Berkshire+Swash|VT323|Notable|Annie+Use+Your+Telescope|Faster+One');
+.App {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace
+}
+.Links {
+  text-align: right;
+  margin: 10px;
+  padding: 10px;
+}
+.Link {
+  justify-content: space-evenly;
+}
+.Categories {
+  color: #737373;
+}
+/* .SubCategory {
+  color: rgb(145, 149, 153);
+} */
+.PageCategory {
+  color: rgb(105, 94, 94);
+}
+h1 {
+  text-align: center
+}
+h1, h2, h3, h4, p {
+  font-family: 'Courier New', Courier, monospace;
+  color: #737373;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+  color:  rgb(105, 94, 94);
+  width: 100px;
+  font-size: 16px;
+  border-radius: 1%;
+  padding: 5px;
+  font-variant: small-caps;
+  outline: none;
+}
+.Logo {
+  text-align: center
+}
+.Demos {
+  /* flex: 2; */
+}
+.App-header {
+  /* background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white; */
+}
