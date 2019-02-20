@@ -7,8 +7,8 @@ class Home extends Component {
 
   componentsDisplay = () => {
     return this.props.components.map((component) => {
-      return (<div key={component.id}>
-        <Link to={`/components/${component.id}`}>{component.component_name}<br /></Link>
+      return (<div key={component.id} className='Components'>
+        <Link to={`/components/${component.id}`}>{component.component_name}</Link>
         <Link to={`/home`} onClick={() => this.props.deleteThis(component.id)}>[!delete]</Link>
         </div>)
     }
@@ -16,7 +16,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='Grid-item-2'>
       {this.componentsDisplay()}
       </div>
     );

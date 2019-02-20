@@ -3,8 +3,8 @@ import { Link, Redirect } from 'react-router-dom';
 import UserSetting from '../components/UserSetting/UserSetting';
 import Components from '../api/ComponentsAPI';
 import Settings from '../api/SettingsAPI';
+import './UserSettingPage.css';
 import '../App.css';
-import './UserSettingPage.css'
 
 class UserSettingPage extends Component {
   state = {
@@ -215,41 +215,32 @@ class UserSettingPage extends Component {
         redirect: true
       })
     })}
-    logout = () => {
-      this.props.auth.logout();
-    }
 
   render() {
     if(this.state.redirect) {
       return <Redirect to={`/components/${this.state.component.id}/settings/`} />
     }
     return (
-      <div className="App">
-        {this.state.setting ?
-        <div> 
+      <div>
+        {this.state.component && this.state.setting ?
+        <div id="Grid-container"> 
+          
         <UserSetting setting={this.state.setting} component={this.state.component} />
-        <form style={{textAlign: 'left'}}>
-          <label className='PageCategory'>
-          <h5>Edit Button:</h5><br />
-          </label>
+        {/* <Link to={`/components/${this.props.match.params.components}/settings/${this.props.match.params.settings}/code`}>Code</Link> */}
 
-          <label className="UserButtons">
-            <button type="button" onClick={this.handleSubmit}>Save {this.state.setting.button_name}</button>
-          </label><br/>
-
-          <label>
+        <form className='Grid-item-5'>
+          <div>
           <h6 className="Categories" >Button Name:</h6>
-            <input name='button_name' type='text' placeholder={this.state.setting.button_name} value={this.state.button_name} onChange={this.handleButtonNameChange} /><br />
-        </label><br/>
+            <input name='button_name' type='text' placeholder={this.state.setting.button_name} value={this.state.button_name} onChange={this.handleButtonNameChange} />
+        </div>
 
-        <label>
+        <div>
         <h6 className="Categories">Button Color:</h6>
-
-          <label className="SubCategory">
+          <div className="SubCategory">
             Button Color:
             <input name='background_color' type='color' value={this.state.setting.button_color} onChange={this.handleButtonColorChange}/>
-          </label><br/>
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Opacity:
             <select className='Change' value={this.state.setting.opacity} onChange={this.handleOpacityChange}>
               <option value='1'>1</option>              
@@ -264,13 +255,12 @@ class UserSettingPage extends Component {
               <option value='0.1'>.1</option>
               <option value='0'>0</option>
             </select>
-          </label><br/>
-          </label><br/>
+          </div>
+          </div>
 
-          <label>
+          <div>
           <h6 className="Categories">Button Size:</h6>
-
-          <label className="SubCategory">
+          <div className="SubCategory">
             Button Width:
             <select className='Change' value={this.state.setting.button_width} onChange={this.handleButtonWidthChange}>
               <option value='25px'>25</option>              
@@ -294,8 +284,8 @@ class UserSettingPage extends Component {
               <option value='475px'>475</option>
               <option value='500px'>500</option> 
             </select>
-          </label><br/>
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Button Height:
             <select className='Change' value={this.state.setting.button_height} onChange={this.handleButtonHeightChange}>
             <option value='25px'>25</option>              
@@ -319,12 +309,12 @@ class UserSettingPage extends Component {
               <option value='475px'>475</option>
               <option value='500px'>500</option> 
             </select>
-          </label><br/>
-        </label>
+          </div>
+        </div>
 
-        <label>
+        <div>
           <h6 className="Categories">Button Shape:</h6>
-          <label className="SubCategory">
+          <div className="SubCategory">
             Button Shape:
             <select className='Change' value={this.state.setting.button_shape} onChange={this.handleButtonShapeChange}>
               <option value='0%'>0</option>
@@ -343,13 +333,13 @@ class UserSettingPage extends Component {
               <option value='45%'>45</option> 
               <option value='50%'>50</option> 
             </select>
-          </label>
-        </label>
+          </div>
+        </div>
 
-          <label>
-            <h6 className="Categories">Button Padding:</h6><br/>
+          <div>
+            <h6 className="Categories">Button Padding:</h6>
 
-          <label className="SubCategory">
+          <div className="SubCategory">
             Button Padding Width:
             <select className='Change' value={this.state.setting.button_padding_width} onChange={this.handleButtonPaddingWidthChange}>
               <option value='4px'>4</option>              
@@ -372,8 +362,8 @@ class UserSettingPage extends Component {
               <option value='38px'>38</option>
               <option value='40px'>40</option>
             </select>
-          </label><br/>
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Button Padding Height:
             <select className='Change' value={this.state.setting.button_padding_height} onChange={this.handleButtonPaddingHeightChange}>
               <option value='4px'>4</option>              
@@ -396,29 +386,29 @@ class UserSettingPage extends Component {
               <option value='38px'>38</option>
               <option value='40px'>40</option>
             </select>
-          </label>
-          </label>
+          </div>
+          </div>
 
-          <label>
-            <h6 className="Categories">Button Text:</h6><br/>
+          <div>
+            <h6 className="Categories">Button Text:</h6>
 
-            <label className="SubCategory">
+            <div className="SubCategory">
               Text:
-              <input name='button_name' type='text' value={this.state.setting.button_text} onChange={this.handleButtonTextChange} /><br />
-            </label>
-            <label className="SubCategory">
+              <input name='button_name' type='text' value={this.state.setting.button_text} onChange={this.handleButtonTextChange} />
+            </div>
+            <div className="SubCategory">
               Color:
               <input name='text_color' type='color' value={this.state.setting.text_color} onChange={this.handleTextColorChange}/>
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Alignment:
               <select className='Change' value={this.state.setting.text_alignment} onChange={this.handleTextAlignmentChange}>
               <option value='center'>Center</option>              
               <option value='left'>Left</option>              
               <option value='right'>Right</option>              
               </select>
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Decoration:
               <select className='Change' value={this.state.setting.text_decoration} onChange={this.handleTextDecorationChange}>
               <option value='none'>None</option>              
@@ -426,8 +416,8 @@ class UserSettingPage extends Component {
               <option value='line-through'>Line-through</option>              
               <option value='underline'>Underline</option>              
               </select>
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Transform:
               <select className='Change' value={this.state.setting.text_transform} onChange={this.handleTextTransformChange}>
               <option value='none'>None</option>              
@@ -435,8 +425,8 @@ class UserSettingPage extends Component {
               <option value='lowercase'>Lowercase</option>              
               <option value='capitalize'>Capitalize</option>              
               </select>
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Letter Spacing:
               <select className='Change' value={this.state.setting.letter_spacing} onChange={this.handleLetterSpacingChange}>
               <option value='none'>None</option>              
@@ -467,13 +457,13 @@ class UserSettingPage extends Component {
               <option value='19px'>19</option>             
               <option value='20px'>20</option>
               </select>
-            </label><br/>
-          </label>
+            </div>
+          </div>
 
-          <label>
-            <h6 className="Categories">Button Font:</h6><br/>
+          <div>
+            <h6 className="Categories">Button Font:</h6>
 
-          <label className="SubCategory">
+          <div className="SubCategory">
             Font Family:
             <select className='Change' value={this.state.setting.font_family} onChange={this.handleFontFamilyChange}>
               <option value='Courier New'>Courier</option>              
@@ -509,8 +499,8 @@ class UserSettingPage extends Component {
               <option value='Annie Use Your Telescope'>Annie Use Your Telescope</option>
               <option value='Faster One'>Faster One</option>
             </select>
-          </label><br />
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Font Size:
               <select className='Change' value={this.state.setting.font_size} onChange={this.handleFontSizeChange}>
               <option value='4px'>4</option>              
@@ -533,39 +523,39 @@ class UserSettingPage extends Component {
               <option value='38px'>38</option>
               <option value='40px'>40</option>
             </select>
-          </label><br/>
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Font Style:
             <select className='Change' value={this.state.setting.font_style} onChange={this.handleFontStyleChange}>
               <option value='normal'>Normal</option>
               <option value='italic'>Italic</option>
               <option value='oblique'>Oblique</option>
             </select> 
-          </label><br/>
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Font Weight:
             <select className='Change' value={this.state.setting.font_weight} onChange={this.handleFontWeightChange}>
               <option value='normal'>Normal</option>
               <option value='bold'>Bold</option>
             </select> 
-          </label><br/>
-          <label className="SubCategory">
+          </div>
+          <div className="SubCategory">
             Font Variant:
             <select className='Change' value={this.state.setting.font_variant} onChange={this.handleFontVariantChange}>
               <option value='normal'>Normal</option>
               <option value='small-caps'>Small Caps</option>
             </select> 
-          </label>
-          </label>
+          </div>
+          </div>
 
-          <label>
+          <div>
             <h6 className="Categories">Button Border:</h6>
               
-            <label className="SubCategory">
+            <div className="SubCategory">
               Color:
               <input name='border_color' type='color' value={this.state.setting.border_color} onChange={this.handleBorderColorChange}/>
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Border Thickness:
             <select className='Change' value={this.state.setting.border_thickness} onChange={this.handleBorderThicknessChange}>
               <option value='none'>None</option> 
@@ -591,17 +581,17 @@ class UserSettingPage extends Component {
               <option value='30px'>30</option>
               <option value='32px'>32</option>
             </select>
-            </label><br/>
-          </label>
+            </div>
+          </div>
 
-          <label>
+          <div>
             <h6 className="Categories">Button Shadow:</h6>
 
-            <label className="SubCategory">
+            <div className="SubCategory">
               Shadow Color:
               <input name='shadow_color' type='color' value={this.state.setting.shadow_color} onChange={this.handleShadowColorChange}/>
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Vertical Offset:
               <select className='Change' value={this.state.setting.shadow_vertical_offset} onChange={this.handleShadowVerticalOffsetChange}>
               <option value='0px'>0</option>
@@ -642,8 +632,8 @@ class UserSettingPage extends Component {
               <option value='40px'>40</option>
               <option value='50px'>50</option>
               </select> 
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Horizontal Offset:
               <select className='Change' value={this.state.setting.shadow_horizontal_offset} onChange={this.handleShadowHorizontalOffsetChange}>
               <option value='0px'>0</option>
@@ -684,8 +674,8 @@ class UserSettingPage extends Component {
               <option value='40px'>40</option>
               <option value='50px'>50</option>
               </select> 
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Spread Offset:
               <select className='Change' value={this.state.setting.shadow_spread_offset} onChange={this.handleShadowSpreadOffsetChange}>
               <option value='0px'>0</option>
@@ -726,8 +716,8 @@ class UserSettingPage extends Component {
               <option value='40px'>40</option>
               <option value='50px'>50</option>
               </select> 
-            </label><br/>
-            <label className="SubCategory">
+            </div>
+            <div className="SubCategory">
               Shadow Blur:
               <select className='Change' value={this.state.setting.shadow_blur} onChange={this.handleShadowBlurChange}>
               <option value='0px'>0</option>
@@ -768,36 +758,17 @@ class UserSettingPage extends Component {
               <option value='40px'>40</option>
               <option value='50px'>50</option>
               </select> 
-            </label><br/>
-          </label>
+            </div>
+          </div>
+          <div className="User-buttons">
+            <button className="Test-button" type="button" onClick={this.handleSubmit}>Save Button</button>
+          </div>
         </form>
-        </div> : null}
           
-        {this.state.component && this.state.setting ?
-        <div>
-        <div style={{margin: '75px', padding: '100px 100px 100px 100px', border: '1px solid #f2f2f2'}}>
-        <button style={{margin: '5px', width: `${this.state.setting.button_width}`, height: `${this.state.setting.button_height}`, borderRadius: `${this.state.setting.button_shape}`, padding: `${this.state.setting.button_padding_height} ${this.state.setting.button_padding_width}`, backgroundColor: `${this.state.setting.button_color}`, opacity: `${this.state.setting.opacity}`, border: `${this.state.setting.border_thickness} solid ${this.state.setting.border_color}`, boxShadow: `${this.state.setting.shadow_vertical_offset} ${this.state.setting.shadow_horizontal_offset} ${this.state.setting.shadow_blur} ${this.state.setting.shadow_spread_offset} ${this.state.setting.shadow_color}`, display: 'inline-block', outline: 'none', color: `${this.state.setting.text_color}`, textAlign: `${this.state.setting.text_alignment}`, textDecoration: `${this.state.setting.text_decoration}`, textTransform: `${this.state.setting.text_transform}`, letterSpacing: `${this.state.setting.letter_spacing}`,fontFamily: `${this.state.setting.font_family}`, fontStyle: `${this.state.setting.font_style}`, fontSize: `${this.state.setting.font_size}`, fontWeight: `${this.state.setting.font_weight}`, fontVariant: `${this.state.setting.font_variant}`}}>{this.state.setting.button_text}
+        <div className='Grid-item-6'>
+        <button className='Style-button' style={{margin: '5px', width: `${this.state.setting.button_width}`, height: `${this.state.setting.button_height}`, borderRadius: `${this.state.setting.button_shape}`, padding: `${this.state.setting.button_padding_height} ${this.state.setting.button_padding_width}`, backgroundColor: `${this.state.setting.button_color}`, opacity: `${this.state.setting.opacity}`, border: `${this.state.setting.border_thickness} solid ${this.state.setting.border_color}`, boxShadow: `${this.state.setting.shadow_vertical_offset} ${this.state.setting.shadow_horizontal_offset} ${this.state.setting.shadow_blur} ${this.state.setting.shadow_spread_offset} ${this.state.setting.shadow_color}`, display: 'inline-block', outline: 'none', color: `${this.state.setting.text_color}`, textAlign: `${this.state.setting.text_alignment}`, textDecoration: `${this.state.setting.text_decoration}`, textTransform: `${this.state.setting.text_transform}`, letterSpacing: `${this.state.setting.letter_spacing}`,fontFamily: `${this.state.setting.font_family}`, fontStyle: `${this.state.setting.font_style}`, fontSize: `${this.state.setting.font_size}`, fontWeight: `${this.state.setting.font_weight}`, fontVariant: `${this.state.setting.font_variant}`}}>{this.state.setting.button_text}
         </button>
         </div></div> : null}
-
-        {this.state.component && this.state.setting ?
-        <div className='Links'>
-          <div className='Link'>
-          <Link to={`/components`}>Home</Link>
-          </div>
-          <div className='Link'>
-          <Link to={`/components/${this.state.component.id}`}>{this.state.component.component_name}</Link>
-          </div>
-          <div className='Link'>
-          <Link to={`/components/${this.props.match.params.components}/settings`}>Buttons</Link>
-          </div>
-          <div className='Link'>
-          <Link to={`/components/${this.props.match.params.components}/settings/${this.props.match.params.settings}/code`}>Code<br /></Link>
-          </div>
-          <div className='Link'>
-            <a style={{ cursor: 'pointer' }} onClick={this.logout}>Log Out</a>
-          </div>
-        </div> : null}
       </div>
     );
   }

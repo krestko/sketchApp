@@ -9,8 +9,8 @@ class UserSetting extends Component {
   render() {
 
     return (
-      <div className="app">
-        <h1>{this.props.setting.button_name}</h1>
+      <div className="Grid-item-1">
+        <h4>{this.props.setting.button_name}</h4>
       </div>
     );
   }

@@ -1,12 +1,5 @@
-.App {
-  display: flex;
-  text-align: left;
-  font-family: 'Courier New', Courier, monospace;
-  font-variant: small-caps;
-}
 .Change {
   width: 75px;
-  display: inline-block;
   background-color: #fff;
   border-radius: 1px;
   box-shadow: 0 0 2px rgb(231, 226, 226);
@@ -15,5 +8,12 @@
   font-size: 14px;
   color: #c4bebe;
   height: 1.75%;
-  text-align: left
+}
+.User-buttons {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center
+}
+.Test-button {
+  width: 75%
 }

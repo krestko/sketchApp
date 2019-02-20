@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import AppName from './components/AppName/AppName';
+import NavBar from './components/NavBar/NavBar';
 import HomePage from './pages/HomePage';
 import UserHomePage from './pages/UserHomePage';
 import UserSettingsPage from './pages/UserSettingsPage';
@@ -12,7 +14,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div className="App">
+      <div>
+      {/* <AppName /> */}
+      <NavBar />
       <Route exact path="/components" component={HomePage} />
       <Route exact path="/components/:components" component={UserHomePage} />
       <Route exact path="/components/:components/settings" component={UserSettingsPage} />

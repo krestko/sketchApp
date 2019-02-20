@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Components from '../api/ComponentsAPI';
 import Home from '../components/Home/Home'
 import '../App.css';
+import './HomePage.css'
 
 class HomePage extends Component {
   state = {
@@ -41,18 +42,17 @@ class HomePage extends Component {
     
   render() {
     return (
-      <div className="app">
-        <div className='Logo'>
-          <h1>{`{⌘App ⌘Sketch}`}</h1>
-            <p>Copy-Paste Style Generations through Drop-Down Design</p>
+      <div id='Grid-container'>
+        <div className='Grid-item-1'>
+          <h4>Projects</h4>
         </div>
-        {this.state.components ? <Home components={this.state.components} deleteThis={this.deleteThis}/> : null} 
-        <div>    
-        <form>
-          <h6 className="Categories">New App Sketch:</h6>
-          <input style={{textAlign: 'center', fontSize: '20px'}} className='Change' name='component_name' type='text' value={this.state.component_name} onChange={this.handleComponentName} /><br />
-          <button type="button" onClick={this.handleSubmit}>Submit</button>
-        </form>
+          {this.state.components ? <Home components={this.state.components} deleteThis={this.deleteThis}/> : null}
+        <div className='Grid-item-3'>    
+          <form>
+            <h6>New App Sketch:</h6>
+            <input style={{textAlign: 'center', fontSize: '20px'}} className='Change' name='component_name' type='text' value={this.state.component_name} onChange={this.handleComponentName} /><br />
+            <button type="button" onClick={this.handleSubmit}>Submit</button>
+          </form>
         </div> 
       </div>
     )

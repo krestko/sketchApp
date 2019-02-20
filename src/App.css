@@ -1,35 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Tangerine|Lobster|Dancing+Script|Shadows+Into+Light|Amatic+SC|Abril+Fatface|Permanent+Marker|Righteous|Cinzel|Courgette|Caveat|Josefin+Slab|Monoton|Audiowide|Homemade+Apple|Nothing+You+Could+Do|Mr+Dafoe|Libre+Barcode+39+Extended|Fredericka+the+Great|Black+Ops+One|Ubuntu+Mono|Chewy|Michroma|Berkshire+Swash|VT323|Notable|Annie+Use+Your+Telescope|Faster+One');
-.App {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace
-}
-.Links {
-  text-align: right;
-  margin: 10px;
-  padding: 10px;
-}
-.Link {
-  justify-content: space-evenly;
-}
-.Categories {
-  color: #737373;
-}
-/* .SubCategory {
-  color: rgb(145, 149, 153);
-} */
-.PageCategory {
-  color: rgb(105, 94, 94);
-}
-h1 {
-  text-align: center
-}
-h1, h2, h3, h4, p {
-  font-family: 'Courier New', Courier, monospace;
-  color: #737373;
-}
 
 button {
   font-family: 'Courier New', Courier, monospace;
@@ -41,19 +10,97 @@ button {
   font-variant: small-caps;
   outline: none;
 }
-.Logo {
-  text-align: center
+form {
+  text-align: left
 }
-.Demos {
-  /* flex: 2; */
+#Nav-bar {
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #737373;
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 10px; */
+  margin: 0px 10px 10px 10px;
+  border: 1px solid grey;
 }
-.App-header {
-  /* background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white; */
+#Nav-bar > div {
+  grid-column: span 1;
 }
+#Grid-container {
+  font-family: 'Courier New', Courier, monospace;
+  color: #737373;
+  display: grid;
+  grid-auto-rows: fit-content(40%);
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 10px; */
+  height: 100vh;
+  margin-top: 40px;
+  text-align: center;
+  margin: 10px;
+}
+#Grid-container > .Grid-item-1{
+  grid-column: span 4;
+  grid-row: 1/2;
+  padding-bottom: 20px
+}
+#Grid-container > .Grid-item-2 {
+  grid-column: span 4;
+  grid-row: 2/7;
+  border: 1px solid grey;
+  text-align: center;
+  padding: 10px
+}
+.Grid-item-2 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 0;
+}
+.Grid-item-2 > div {
+  grid-column: span 1;
+}
+#Grid-container > .Grid-item-3 {
+  grid-column: span 4;
+  grid-row: 7/10;
+  text-align: center;
+}
+#Grid-container > .Grid-item-5 {
+  grid-column: span 1;
+  grid-row: fit-content(40%);
+  border: 1px solid grey;
+  text-align: left;
+  padding: 10px;
+  grid-gap: 10px;
+}
+#Grid-container > .Grid-item-6 {
+  grid-column: span 3;
+  grid-row: fit-content(40%);
+  text-align: center;
+  grid-gap: 10px;
+  margin: 10% 25% 25% 25%;
+  /* padding: 200px 100px 100px 100px; */
+}
+#Grid-container > .Grid-item-7 {
+  grid-column: span 4;
+  grid-row: fit-content(40%);
+  text-align: center;
+  margin: 2% 5% 0% 5%;
+}
+#Grid-container > .Grid-item-8 {
+  grid-column: span 4;
+  grid-row: fit-content(40%);
+  text-align: left;
+  /* grid-gap: 10px; */
+  margin: 0% 10% 2% 10%;
+}
+.Style-button {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10rem;
+}
+
+
+

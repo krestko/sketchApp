@@ -16,6 +16,17 @@ class UserHomePage extends Component {
         component: json
     }))
   }
+  displaySettings = () => {
+    return (
+      <div id="Grid-container">
+        <div className='Grid-item-1'>
+          <h4>{this.state.component.component_name}</h4>
+        </div>
+      <div className='Grid-item-2'>
+        <Link to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+      </div>
+    </div>)
+  }
 
   // logout = () => {
   //   this.props.auth.logout();
@@ -33,22 +44,8 @@ class UserHomePage extends Component {
   render() {
     
     return (
-      <div className="App">
-      {this.state.component ? 
       <div>
-        <div className='Links'>
-          <div className='Link'>
-            <Link to={`/components`}>Home</Link>
-          </div>
-          {/* <div className='Link'>
-            <a style={{ cursor: 'pointer' }} onClick={this.logout}>Log Out</a>
-          </div> */}
-        </div>
-          <h1>{this.state.component.component_name}</h1>
-          <div className='Link'>
-            <Link to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-          </div>
-        </div> : null}
+      {this.state.component ? this.displaySettings() : null}
       </div>      
     );
   }

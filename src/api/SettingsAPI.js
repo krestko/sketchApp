@@ -1,15 +1,18 @@
 const fetchSettingsByComponentID = (componentID) => {
-  return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings`) 
+  return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings`)
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}/settings`) 
     .then((response) => response.json())
 }
 
 const fetchSettingBySettingID = (componentID, settingID) => {
-  return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings/${settingID}`) 
+  return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings/${settingID}`)
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}/settings/${settingID}`)
     .then((response) => response.json())
 }
 
 const addComponentSetting = (componentID, settingObject) => {
   return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings`, {
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}/settings`, {
     headers: {'content-type': 'application/json'},
     method: "POST",
     mode: "cors",
@@ -20,6 +23,7 @@ const addComponentSetting = (componentID, settingObject) => {
 
 const updateComponentSetting = (componentID, settingID, componentSetting) => {
   return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings/${settingID}`, {
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}/settings/${settingID}`, {
     headers: {'content-type': 'application/json'},
     method: "PATCH",
     mode: "cors",
@@ -30,6 +34,7 @@ const updateComponentSetting = (componentID, settingID, componentSetting) => {
 
 const deleteComponentSetting = (componentID, settingID) => {
   return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}/settings/${settingID}`, {
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}/settings/${settingID}`, {
     method: "DELETE",
     mode: "cors"
   })

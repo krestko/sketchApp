@@ -72,30 +72,23 @@ class UserSettingsPage extends Component {
   handleButtonNameChange = (e) => {
     this.setState({button_name: e.target.value});
   }
-  logout = () => {
-    this.props.auth.logout();
-  }
 
   render() {
     if(this.state.redirect) {
       return <Redirect to={`/components/${this.state.component.id}/settings/${this.state.settings[0].id}`} />
     }
+
     return (
-      <div className="App">
+      <div>
         {this.state.component && this.state.settings ? 
-        <div>
-          <div className='Links'>
-          <div className='Link'>
-            <Link to={`/components`}>Home</Link>
+        <div id='Grid-container'>
+          <div className='Grid-item-1'>
+            <h4>Buttons</h4>
           </div>
-          <div className='Link'>
-            <Link to={`/components/${this.state.component.id}`}>{this.state.component.component_name}</Link>
-          </div>
-          </div>
-          <h1>Buttons</h1>
-        <div className='SettingForm'>
-        <form>
           <UserSettings component={this.state.component} deleteThis={this.deleteThis} settings={this.state.settings}/>
+
+        <div className='Grid-item-3'>    
+        <form>
         <label className="PageCategory">
         <h5>New Button:</h5>
         </label>
