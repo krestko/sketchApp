@@ -17,9 +17,9 @@ class UserHomePage extends Component {
     }))
   }
 
-  logout = () => {
-    this.props.auth.logout();
-  }
+  // logout = () => {
+  //   this.props.auth.logout();
+  // }
   // deleteThisUser = (userID) => {
   //   Users.deleteUser(userID)
   // }
@@ -40,9 +40,9 @@ class UserHomePage extends Component {
           <div className='Link'>
             <Link to={`/components`}>Home</Link>
           </div>
-          <div className='Link'>
+          {/* <div className='Link'>
             <a style={{ cursor: 'pointer' }} onClick={this.logout}>Log Out</a>
-          </div>
+          </div> */}
         </div>
           <h1>{this.state.component.component_name}</h1>
           <div className='Link'>

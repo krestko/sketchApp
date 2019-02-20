@@ -91,9 +91,6 @@ class UserSettingsPage extends Component {
           <div className='Link'>
             <Link to={`/components/${this.state.component.id}`}>{this.state.component.component_name}</Link>
           </div>
-          <div className='Link'>
-            <a style={{ cursor: 'pointer' }} onClick={this.logout}>Log Out</a>
-          </div>
           </div>
           <h1>Buttons</h1>
         <div className='SettingForm'>
