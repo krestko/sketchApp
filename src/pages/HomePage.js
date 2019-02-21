@@ -32,7 +32,8 @@ class HomePage extends Component {
       Components.addComponent({component_name: this.state.component_name})
         .then(() => Components.fetchComponents())
         .then(json => this.setState({
-          components: json
+          components: json,
+          component_name: ''
         }))
     }
 
@@ -44,16 +45,14 @@ class HomePage extends Component {
     return (
       <div id='Grid-container'>
         <div className='Grid-item-1'>
-          <h4>Projects</h4>
+          Projects
         </div>
           {this.state.components ? <Home components={this.state.components} deleteThis={this.deleteThis}/> : null}
-        <div className='Grid-item-3'>    
-          <form>
+          <form className='Grid-item-3'>
             <h6>New App Sketch:</h6>
-            <input style={{textAlign: 'center', fontSize: '20px'}} className='Change' name='component_name' type='text' value={this.state.component_name} onChange={this.handleComponentName} /><br />
-            <button type="button" onClick={this.handleSubmit}>Submit</button>
+            <input name='component_name' type='text' value={this.state.component_name} onChange={this.handleComponentName}/><br/>
+            <button type="submit" value='Submit' onClick={this.handleSubmit}>Submit</button>
           </form>
-        </div> 
       </div>
     )
   }

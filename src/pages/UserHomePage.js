@@ -20,10 +20,18 @@ class UserHomePage extends Component {
     return (
       <div id="Grid-container">
         <div className='Grid-item-1'>
-          <h4>{this.state.component.component_name}</h4>
+          {this.state.component.component_name}
         </div>
       <div className='Grid-item-2'>
-        <Link to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+
       </div>
     </div>)
   }

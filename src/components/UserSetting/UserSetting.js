@@ -10,7 +10,7 @@ class UserSetting extends Component {
 
     return (
       <div className="Grid-item-1">
-        <h4>{this.props.setting.button_name}</h4>
+        {this.props.setting.button_name}
       </div>
     );
   }

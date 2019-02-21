@@ -19,8 +19,8 @@ class UserSettingsPage extends Component {
     button_shape: '0%',
     button_padding_width: '24px',
     button_padding_height: '10px',
-    button_text: 'Submit',
-    text_color: '#e6e6e6',
+    button_text: '--> Template <--',
+    text_color: '#bfbfbf',
     text_alignment: 'center',
     text_decoration: 'none',
     text_transform: 'none',
@@ -75,7 +75,7 @@ class UserSettingsPage extends Component {
 
   render() {
     if(this.state.redirect) {
-      return <Redirect to={`/components/${this.state.component.id}/settings/${this.state.settings[0].id}`} />
+      return <Redirect to={`/components/${this.state.component.id}/settings/${this.state.settings[this.state.settings.length - 1].id}`} />
     }
 
     return (
@@ -83,25 +83,15 @@ class UserSettingsPage extends Component {
         {this.state.component && this.state.settings ? 
         <div id='Grid-container'>
           <div className='Grid-item-1'>
-            <h4>Buttons</h4>
+            Buttons
           </div>
           <UserSettings component={this.state.component} deleteThis={this.deleteThis} settings={this.state.settings}/>
 
-        <div className='Grid-item-3'>    
-        <form>
-        <label className="PageCategory">
-        <h5>New Button:</h5>
-        </label>
-
-        <label className='UserButtons'>
-          <button type="button" onClick={this.handleSubmit}>Continue</button>
-        </label>
-
-        <label>
-          <h6 className="Categories">Button Name:</h6>
-            <input style={{textAlign: 'center', fontSize: '40px'}} name='button_name' type='text' value={this.state.button_name} onChange={this.handleButtonNameChange} /><br />
-        </label><br />
-        </form></div></div> : null}
+        <form className='Grid-item-3'>
+          <h6>New Button:</h6>
+            <input name='button_name' type='text' value={this.state.button_name} onChange={this.handleButtonNameChange} /><br/>
+            <button type="submit" value="Submit" onClick={this.handleSubmit}>Continue</button>
+        </form></div> : null}
       </div>
     );
   }

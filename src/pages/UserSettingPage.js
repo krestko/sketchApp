@@ -18,8 +18,8 @@ class UserSettingPage extends Component {
     button_shape: '0%',
     button_padding_width: '24px',
     button_padding_height: '10px',
-    button_text: 'Submit',
-    text_color: '#e6e6e6',
+    button_text: '--> Template <--',
+    text_color: '#bfbfbf',
     text_alignment: 'center',
     text_decoration: 'none',
     text_transform: 'none',
@@ -230,8 +230,11 @@ class UserSettingPage extends Component {
 
         <form className='Grid-item-5'>
           <div>
-          <h6 className="Categories" >Button Name:</h6>
-            <input name='button_name' type='text' placeholder={this.state.setting.button_name} value={this.state.button_name} onChange={this.handleButtonNameChange} />
+            <div style={{textAlign: 'center', padding: '10px 0px 10px 0px', fontSize: '1.5em'}}>
+            Selectors
+            </div>
+          <h6 className="Categories">Edit Name:</h6>
+            <input className="Categories" name='button_name' type='text' placeholder={this.state.setting.button_name} value={this.state.button_name} onChange={this.handleButtonNameChange} />
         </div>
 
         <div>
