@@ -1,18 +1,18 @@
 const fetchComponents = () => {
-  // return fetch(`https://devsketch.herokuapp.com/api/v1/components`)
-  return fetch(`http://localhost:3001/api/v1/components`) 
+  return fetch(`https://devsketch.herokuapp.com/api/v1/components`)
+  // return fetch(`http://localhost:3001/api/v1/components`) 
     .then((response) => response.json())
 }
 
 const fetchComponentByID = (componentID) => {
-  // return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}`)
-  return fetch(`http://localhost:3001/api/v1/components/${componentID}`) 
+  return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}`)
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}`) 
     .then((response) => response.json())
 }
 
 const addComponent = (componentObject) => {
-  // return fetch(`https://devsketch.herokuapp.com/api/v1/components`, {
-  return fetch(`http://localhost:3001/api/v1/components`, {
+  return fetch(`https://devsketch.herokuapp.com/api/v1/components`, {
+  // return fetch(`http://localhost:3001/api/v1/components`, {
     headers: {'content-type': 'application/json'},
     method: "POST",
     mode: "cors",
@@ -22,8 +22,8 @@ const addComponent = (componentObject) => {
 }
 
 const deleteComponent= (componentID) => {
-  // return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}`, {
-  return fetch(`http://localhost:3001/api/v1/components/${componentID}`, {
+  return fetch(`https://devsketch.herokuapp.com/api/v1/components/${componentID}`, {
+  // return fetch(`http://localhost:3001/api/v1/components/${componentID}`, {
     method: "DELETE",
     mode: "cors"
   })
