@@ -75,7 +75,7 @@ class UserSettingsPage extends Component {
 
   render() {
     if(this.state.redirect) {
-      return <Redirect to={`/components/${this.state.component.id}/settings/${this.state.settings[this.state.settings.length - 1].id}`} />
+      return <Redirect to={`/components/${this.state.component.id}/settings/${this.state.settings[0].id}`} />
     }
 
     return (
