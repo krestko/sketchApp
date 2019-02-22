@@ -6,7 +6,7 @@ import './Home.css'
 class Home extends Component {
 
   componentsDisplay = () => {
-    return this.props.components.reverse().map((component) => {
+    return this.props.components.map((component) => {
       return (<div key={component.id} className='Components'>
         <Link className='Content-link' to={`/components/${component.id}`}>{component.component_name}</Link><br/>
         <Link className='Content-link' to={`/components`} onClick={() => this.props.deleteThis(component.id)}>[!DELETE]</Link>
