@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Settings from '../api/SettingsAPI';
-import Components from '../api/ComponentsAPI';
-import '../App.css';
-import './AnimationHomePage.css'
+import Settings from '../../api/SettingsAPI';
+import Components from '../../api/ComponentsAPI';
+import '../../App.css';
+import './CodePage.css'
 
 
-class AnimationHomePage extends Component {
+class CodePage extends Component {
   state = {
     setting: null,
     component: null
@@ -77,6 +77,6 @@ class AnimationHomePage extends Component {
     )
   }
 }
-export default AnimationHomePage;
+export default CodePage;
 
 

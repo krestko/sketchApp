@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import UserSetting from '../components/UserSetting/UserSetting';
-import Components from '../api/ComponentsAPI';
-import Settings from '../api/SettingsAPI';
+import UserSetting from '../../components/UserSetting/UserSetting';
+import Components from '../../api/ComponentsAPI';
+import Settings from '../../api/SettingsAPI';
+import '../../App.css';
 import './UserSettingPage.css';
-import '../App.css';
 
 class UserSettingPage extends Component {
   state = {

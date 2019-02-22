@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Components from '../api/ComponentsAPI';
-import Settings from '../api/SettingsAPI';
-import UserSettings from '../components/UserSettings/UserSettings';
-import '../App.css';
+import Components from '../../api/ComponentsAPI';
+import Settings from '../../api/SettingsAPI';
+import UserSettings from '../../components/UserSettings/UserSettings';
+import '../../App.css';
 import './UserSettingsPage.css'
 
 class UserSettingsPage extends Component {
