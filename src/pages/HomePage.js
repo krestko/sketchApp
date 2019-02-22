@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Components from '../api/ComponentsAPI';
 import Home from '../components/Home/Home'
 import '../App.css';
@@ -8,7 +9,8 @@ class HomePage extends Component {
   state = {
     components: null,
     component: null,
-    component_name: ''
+    component_name: '',
+    redirect: false
   }
 
     componentDidMount() {
@@ -33,7 +35,8 @@ class HomePage extends Component {
         .then(() => Components.fetchComponents())
         .then(json => this.setState({
           components: json,
-          component_name: ''
+          component_name: '',
+          redirect: true
         }))
     }
 
@@ -42,6 +45,10 @@ class HomePage extends Component {
     }
     
   render() {
+    if(this.state.redirect) {
+      return <Redirect to={`/components/${this.state.components[this.state.components.length - 1].id}`} />
+    }
+
     return (
       <div id='Grid-container'>
         <div className='Grid-item-1'>

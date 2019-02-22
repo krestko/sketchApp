@@ -1,0 +1,9 @@
+.Nav-link {
+  color: #00b3b3;
+  /* font-weight: bold */
+}
+.Nav-link:hover {
+  font-size: 1em;
+  color: #00b3b3;
+  font-weight: bold;
+}

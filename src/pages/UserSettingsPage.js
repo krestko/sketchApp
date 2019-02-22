@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Components from '../api/ComponentsAPI';
 import Settings from '../api/SettingsAPI';
 import UserSettings from '../components/UserSettings/UserSettings';
@@ -90,7 +90,7 @@ class UserSettingsPage extends Component {
         <form className='Grid-item-3'>
           <h6>New Button:</h6>
             <input name='button_name' type='text' value={this.state.button_name} onChange={this.handleButtonNameChange} /><br/>
-            <button type="submit" value="Submit" onClick={this.handleSubmit}>Continue</button>
+            <button type="submit" value="Submit" onClick={this.handleSubmit}>Submit</button>
         </form></div> : null}
       </div>
     );

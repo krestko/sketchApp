@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import AppName from './components/AppName/AppName';
 import NavBar from './components/NavBar/NavBar';
+import LandingScreen from './pages/LandingScreen';
 import HomePage from './pages/HomePage';
 import UserHomePage from './pages/UserHomePage';
 import UserSettingsPage from './pages/UserSettingsPage';
@@ -15,8 +15,8 @@ class App extends Component {
     return (
       <BrowserRouter>
       <div>
-      {/* <AppName /> */}
       <NavBar />
+      <Route exact path="/" component={LandingScreen} />
       <Route exact path="/components" component={HomePage} />
       <Route exact path="/components/:components" component={UserHomePage} />
       <Route exact path="/components/:components/settings" component={UserSettingsPage} />

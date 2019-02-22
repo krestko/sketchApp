@@ -24,13 +24,13 @@ class UserHomePage extends Component {
         </div>
       <div className='Grid-item-2'>
         <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
-        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Buttons<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Links<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Divs<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Text<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Layouts<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Images<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Animations<br /></Link>
+        <Link className='Settings' to={`/components/${this.state.component.id}/settings`}>Templates<br /></Link>
 
       </div>
     </div>)

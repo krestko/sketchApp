@@ -11,6 +11,9 @@ button {
   outline: none;
   border: none;
 }
+button:hover {
+  color: #00ccff
+}
 form {
   text-align: left;
 }
@@ -21,14 +24,18 @@ input[type="text"] {
   width: 200px;
   height: 30px;
 }
-a {
-  color:  rgb(105, 94, 94);
+.Content-link {
+  color:  #404040;
+  /* box-shadow: 3px 2px #999999; */
+}
+.Content-link:hover {
+  color: #00ccff
 }
 #Nav-bar {
   padding: 10px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.3em;
-  color: #737373;
+  color: #00b3b3;
   text-align: center;
   display: grid;
   grid-template-rows: repeat(1fr);
@@ -48,7 +55,6 @@ a {
   display: grid;
   grid-auto-rows: fit-content(40%);
   grid-template-columns: repeat(4, 1fr);
-  /* grid-gap: 10px; */
   height: 100vh;
   margin-top: 40px;
   text-align: center;
@@ -77,7 +83,7 @@ a {
 #Grid-container > .Grid-item-2 {
   grid-column: span 4;
   grid-row: fit-content(40%);
-  margin: 0px 10px 0px 10px;
+  /* margin: 0px 150px 0px 150px; */
   text-align: center;
   display: grid;
   grid-template-rows: fit-content(40%);
@@ -119,6 +125,7 @@ a {
   /* grid-gap: 10px; */
   margin: 0% 10% 2% 10%;
 }
+
 
 
 

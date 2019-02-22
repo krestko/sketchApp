@@ -1,3 +1,7 @@
 .Settings {
-  margin: 100px 100px 100px 100px
+  margin: 100px 100px 100px 100px;
+  color:  #404040;
+}
+.Settings:hover {
+  color: #00ccff
 }

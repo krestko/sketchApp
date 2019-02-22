@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../../App.css'
+import './NavBar.css';
+import '../../App.css';
 
 class NavBar extends Component {
 
@@ -8,9 +9,9 @@ class NavBar extends Component {
     return (
       <div id='Nav-bar'>
         <div>{`{⌘App ⌘Sketch}`}</div>
-        <div>HOME</div>
+        <Link to={'/'}><div className='Nav-link'>HOME</div></Link>
         <div>INFO</div>
-        <Link to={`/components`}><div>PROJECTS</div></Link>
+        <Link to={`/components`}><div className='Nav-link'>PROJECTS</div></Link>
       </div>
     )
   }
