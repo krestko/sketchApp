@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Components from '../api/ComponentsAPI';
 import Settings from '../api/SettingsAPI';
-import UserSetting from './UserSetting';
+import UserSetting from '../components/UserSetting/UserSetting';
 import NameSelectors from './NameSelectors';
 import ColorSelectors from './ColorSelectors';
 import SizeSelectors from './SizeSelectors';

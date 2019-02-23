@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
-import './UserSetting/UserSetting.css'
+// import '../UserSetting/UserSetting.css'
 
 class ColorSelectors extends Component {
 
