@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Components from '../../api/ComponentsAPI';
-import '../../App.css';
+import Components from '../api/ComponentsAPI';
+import '../App.css';
 import './UserHomePage.css'
 
 class UserHomePage extends Component {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Settings from '../../api/SettingsAPI';
-import Components from '../../api/ComponentsAPI';
-import '../../App.css';
+import Settings from '../api/SettingsAPI';
+import Components from '../api/ComponentsAPI';
+import '../App.css';
 import './CodePage.css'
 
 

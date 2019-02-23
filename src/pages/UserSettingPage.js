@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import Components from '../../api/ComponentsAPI';
-import Settings from '../../api/SettingsAPI';
-import UserSetting from '../../components/UserSetting/UserSetting';
-import NameSelectors from '../../components/UserSetting/NameSelectors';
-import ColorSelectors from '../../components/UserSetting/ColorSelectors';
-import SizeSelectors from '../../components/UserSetting/SizeSelectors';
-import ShapeSelectors from '../../components/UserSetting/ShapeSelectors';
-import PaddingSelectors from '../../components/UserSetting/PaddingSelectors';
-import TextSelectors from '../../components/UserSetting/TextSelectors';
-import FontSelectors from '../../components/UserSetting/FontSelectors';
-import BorderSelectors from '../../components/UserSetting/BorderSelectors';
-import ShadowSelectors from '../../components/UserSetting/ShadowSelectors';
-import '../../App.css';
+import Components from '../api/ComponentsAPI';
+import Settings from '../api/SettingsAPI';
+import UserSetting from '../components/UserSetting/UserSetting';
+import NameSelectors from '../components/UserSetting/NameSelectors';
+import ColorSelectors from '../components/UserSetting/ColorSelectors';
+import SizeSelectors from '../components/UserSetting/SizeSelectors';
+import ShapeSelectors from '../components/UserSetting/ShapeSelectors';
+import PaddingSelectors from '../components/UserSetting/PaddingSelectors';
+import TextSelectors from '../components/UserSetting/TextSelectors';
+import FontSelectors from '../components/UserSetting/FontSelectors';
+import BorderSelectors from '../components/UserSetting/BorderSelectors';
+import ShadowSelectors from '../components/UserSetting/ShadowSelectors';
+import '../App.css';
 import './UserSettingPage.css';
 
 class UserSettingPage extends Component {
