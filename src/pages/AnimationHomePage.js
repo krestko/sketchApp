@@ -6,7 +6,7 @@ import '../App.css';
 import './CodePage.css'
 
 
-class CodePage extends Component {
+class AnimationHomePage extends Component {
   state = {
     setting: null,
     component: null
@@ -77,6 +77,6 @@ class CodePage extends Component {
     )
   }
 }
-export default CodePage;
+export default AnimationHomePage;
 
 
