@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Components from '../api/ComponentsAPI';
-import Home from '../components/Home/Home'
+import Home from '../components/Home/Home';
 import '../App.css';
 import './HomePage.css'
 
